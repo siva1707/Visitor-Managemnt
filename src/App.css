@@ -1,0 +1,166 @@
+/* General Styles*/
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f4f6;
+}
+
+
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 16rem;
+  background-color: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2563eb;
+  text-align: center;
+  margin-bottom:40px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #374151;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.sidebar-link:hover {
+  background-color: #ebf4ff;
+  color: #2563eb;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.75rem;
+}
+
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  transition: color 0.2s;
+  margin-top: 350px;
+}
+
+.logout-btn:hover {
+  color: red;
+}
+
+
+.main-content {
+  margin-left: 16rem;
+  padding: 2rem;
+  flex: 1;
+}
+
+.header {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color:#2563eb;
+}
+
+
+.admin-info {
+  display: flex;
+  align-items: center;
+}
+
+.admin-details {
+  text-align: right;
+  margin-right: 0.75rem;
+}
+
+.admin-name {
+  font-weight: bold;
+  color: #111827;
+}
+
+.admin-email {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2563eb;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+
+.content-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-text {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.welcome-text h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #374151;
+}
+
+.welcome-text p {
+  color: #6b7280;
+  margin-top: 0.5rem;
+} 

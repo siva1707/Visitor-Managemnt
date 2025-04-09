@@ -1,0 +1,559 @@
+/* Main container styling */
+.visitor-list-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+/* Header styling */
+.visitor-list-header {
+  padding: 1.75rem 2rem;
+  background: linear-gradient(135deg, #4a6fdc 0%, #3b5998 100%);
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.visitor-list-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Search input styling */
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  min-width: 320px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  box-shadow: 0 2px 8px rgba(74, 111, 220, 0.3);
+}
+
+/* Refresh button styling */
+.refresh-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.refresh-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Table container */
+.visitors-table-container {
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+/* Table styling */
+.visitors-table {
+  table-layout: fixed; /* Makes columns more predictable */
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 1rem;
+}
+
+.visitors-table th,
+.visitors-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: top; /* Align all content to top for consistency */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+.visitors-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  color: #495057;
+  transition: background-color 0.2s;
+}
+
+.visitors-table th:hover {
+  background-color: #e9ecef;
+}
+
+.visitors-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.visitors-table tbody tr:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Address text handling */
+.address-cell {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  max-height: 4.2em; /* Approximately 3 lines of text */
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  width: 100%; /* Ensure address cell takes full allocated width */
+}
+
+/* For cases where you need to show full address */
+.address-cell.expanded {
+  max-height: none;
+  -webkit-line-clamp: unset;
+}
+
+/* Add toggle button for expanding address */
+.address-toggle {
+  color: #4a90e2;
+  background: none;
+  border: none;
+  font-size: 0.8rem;
+  padding: 2px 4px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 3px;
+}
+
+/* Address field in form */
+.form-group textarea.address-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group textarea.address-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Status messages */
+.loading-message,
+.error-message,
+.no-data-message {
+  padding: 3rem;
+  text-align: center;
+  color: #6c757d;
+  font-size: 1.1rem;
+}
+
+.error-message {
+  color: #dc3545;
+}
+
+/* Table icons */
+.table-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+/* Action buttons styling */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+  white-space: nowrap;
+  min-width: 110px;
+  width: 100%; /* Ensure action buttons take full column width */
+}
+
+.action-cell {
+  width: 140px; /* Set fixed width for action column */
+  min-width: 140px; /* Ensure minimum width */
+  white-space: nowrap; /* Prevent wrapping of action buttons */
+}
+
+.edit-button, 
+.delete-button, 
+.exit-button {
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  min-width: 32px;
+  min-height: 32px;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.edit-button {
+  color: #4a90e2;
+}
+
+.delete-button {
+  color: #e25c5c;
+}
+
+.exit-button {
+  color: #50b86a;
+}
+
+.edit-button:hover {
+  background-color: rgba(74, 144, 226, 0.1);
+  border-color: rgba(74, 144, 226, 0.3);
+  transform: translateY(-2px);
+}
+
+.delete-button:hover {
+  background-color: rgba(226, 92, 92, 0.1);
+  border-color: rgba(226, 92, 92, 0.3);
+  transform: translateY(-2px);
+}
+
+.exit-button:hover {
+  background-color: rgba(80, 184, 106, 0.1);
+  border-color: rgba(80, 184, 106, 0.3);
+  transform: translateY(-2px);
+}
+
+.exit-button:disabled {
+  color: #adb5bd;
+  cursor: not-allowed;
+  transform: none;
+  border-color: transparent;
+}
+
+/* Table cells for action buttons */
+.visitors-table td:last-child {
+  text-align: left;
+  padding-left: 1.25rem;
+  width: 140px; /* Fixed width for action column */
+  min-width: 140px; /* Ensure minimum width */
+}
+
+/* Ensure buttons have consistent icon sizing */
+.action-buttons button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Adjust column widths for better distribution */
+.visitors-table th:nth-child(1),
+.visitors-table td:nth-child(1) {
+  width: 15%;
+}
+
+.visitors-table th:nth-child(2),
+.visitors-table td:nth-child(2) {
+  width: 12%;
+}
+
+.visitors-table th:nth-child(3),
+.visitors-table td:nth-child(3) {
+  width: 20%;
+  max-width: 20%; /* Prevent address column from expanding */
+}
+
+.visitors-table th:nth-child(4),
+.visitors-table td:nth-child(4),
+.visitors-table th:nth-child(5),
+.visitors-table td:nth-child(5) {
+  width: 10%;
+}
+
+.visitors-table th:nth-child(6),
+.visitors-table td:nth-child(6) {
+  width: 20%;
+}
+
+.visitors-table th:nth-child(7),
+.visitors-table td:nth-child(7) {
+  width: 13%;
+}
+
+/* Modal styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #343a40;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.75rem;
+}
+
+.warning-modal {
+  text-align: center;
+}
+
+.warning-text {
+  color: #e25c5c;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: rgba(226, 92, 92, 0.1);
+  border-radius: 6px;
+}
+
+/* Form elements */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+/* Modal buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.save-button, 
+.delete-confirm-button,
+.cancel-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.save-button {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #3a7dd2;
+  transform: translateY(-1px);
+}
+
+.delete-confirm-button {
+  background-color: #e25c5c;
+  color: white;
+}
+
+.delete-confirm-button:hover {
+  background-color: #d64545;
+  transform: translateY(-1px);
+}
+
+.cancel-button {
+  background-color: #f1f3f5;
+  color: #495057;
+  border: 1px solid #dee2e6;
+}
+
+.cancel-button:hover {
+  background-color: #e9ecef;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .visitors-table td:last-child {
+    width: 120px;
+    min-width: 120px;
+  }
+  
+  .action-cell {
+    width: 120px;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .visitor-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+  
+  .search-input {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .header-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .refresh-button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    width: 95%;
+    padding: 1.5rem;
+  }
+  
+  .action-buttons {
+    gap: 6px;
+  }
+  
+  .edit-button, 
+  .delete-button, 
+  .exit-button {
+    padding: 6px;
+    min-width: 28px;
+    min-height: 28px;
+  }
+  
+  .action-buttons button svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Additional enhancements for tables on mobile */
+@media (max-width: 576px) {
+  .visitors-table th,
+  .visitors-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .visitors-table td:last-child {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100px;
+    min-width: 100px;
+  }
+  
+  .action-cell {
+    width: 100px;
+    min-width: 100px;
+  }
+  
+  .action-buttons {
+    gap: 4px;
+  }
+  
+  .edit-button, 
+  .delete-button, 
+  .exit-button {
+    padding: 5px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+  
+  .action-buttons button svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Responsive adjustments for address cells */
+@media (max-width: 768px) {
+  .address-cell {
+    max-height: 2.8em; /* Approximately 2 lines on mobile */
+    -webkit-line-clamp: 2;
+  }
+  
+  .form-group textarea.address-input {
+    min-height: 60px;
+  }
+}
