@@ -4,7 +4,7 @@ import VisitorForm from './components/VisitorForm';
 import './App.css';
 import Login from './components/Login';
 import VisitorList from './components/VisitorList';
-import VisitorHistory from './components/VisitorHistory';
+import VisitorHistory from './components/visitorHistory';
 import ResetPassword from './components/ResetPassword';
 
 const App = () => {
